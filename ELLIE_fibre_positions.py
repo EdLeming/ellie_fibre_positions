@@ -1,6 +1,26 @@
 '''
-A short script to plot the ELLIE fibre positions on 
-a PSUP map.
+A short script to calculate the TELLIE fibre install positions
+using the install spreadsheet (used by the installation team)
+and a text file containing the hex panel x,y,z coordinates as
+inputs.
+
+The script additionally creates new .json files for where the
+tellie fibre tables have been updated with three new fields.
+
+1) psup_panel:     The panel on which a fibre is installed
+2) pointing_angle: The pointing angle of the fibre relative to
+                   the pointing vector of the panel it's
+                   installed on.
+3) fibre_status:   A status flag, where: 
+                   0 : Installed, OK
+                   1 : Installed, low transmittance
+                   2 : Installed, broken
+                   3 : Not installed, OK
+                   4 : Not installed, low transmittance
+                   5 : Not installed, broken
+
+The updated files will eventually be copied into TELLIE.ratdb,
+stored in the rat/data directory.
 
 Author: Ed Leming
 Date  : 31/08/2016
